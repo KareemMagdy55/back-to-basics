@@ -1,5 +1,5 @@
-## Programming Paradigms: An Overview
-Before diving into Object-Oriented Programming (OOP) concepts, it's important to understand the broader umbrella under which OOP falls. That umbrella is called Programming Paradigms.
+## 1. Programming Paradigms: An Overview
+Before diving into Object-Oriented Programming (OOP) concepts, it's important to understand the broader umbrella under which OOP falls which called "Programming Paradigms"
 
 The term 'paradigm' refers to the way you write and design your code. There are two primary types of programming paradigms:
 
@@ -16,7 +16,7 @@ for (int i = 0; i < arr.Length; i++) {
     sum += arr[i];
 }
 
-// Output the result
+// Print the result
 Console.WriteLine(sum);
 ```
 ### Declarative Programming Paradigm
@@ -34,3 +34,34 @@ Console.WriteLine(sum);
 -- The query specifies: "Return numbers greater than five" without needing to define how it's done (~ loop on numbers and check the condition....)
 SELECT num FROM numbers WHERE num > 5;
 ```
+---
+## 2. Philosphy behind OOP
+In the early days, paradigms like Procedural and Functional were commonly used in programming languages such as C and Fortran.
+In these paradigms, systems were typically modeled as a sequence of steps (like in the first example of this document), or by breaking the program into smaller functions (as in the second example).
+
+However, with the advent of Object-Oriented Programming (OOP) and languages like Smalltalk, a new approach emerged.
+OOP introduced the idea of thinking about programs as collections of objects. These objects have both attributes (characteristics) and methods (behaviors).
+
+```csharp
+
+class Customer{
+    // attributes (characteristics) 
+    int age;
+    int Balance;
+    bool hasPremiumAccount; 
+
+    // methods (behaviors)
+    void Purchase(Product product){
+        // Purchase logic...
+    }
+}
+
+```
+---
+
+
+
+
+
+
+
