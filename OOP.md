@@ -39,9 +39,10 @@ SELECT num FROM numbers WHERE num > 5;
 In the early days, paradigms like Procedural and Functional were commonly used in programming languages such as C and Fortran.
 In these paradigms, systems were typically modeled as a sequence of steps (like in the first example of this document), or by breaking the program into smaller functions (as in the second example).
 
-However, with the advent of Object-Oriented Programming (OOP) and languages like Smalltalk, a new approach emerged.
+However, with the advent of Object-Oriented Programming (OOP) and languages like Smalltalk and Simula, a new approach emerged.
 OOP introduced the idea of thinking about programs as collections of objects. These objects have both attributes (characteristics) and methods (behaviors).
 
+The keyword ```class``` as a blueprint for defining the structure of objects, including their attributes and methods.
 ```csharp
 
 class Customer{
@@ -58,6 +59,11 @@ class Customer{
 
 ```
 ---
+## 3. OOP concepts
+OOP has four main concepts encapsulation, abstraction, inheritance and polymorphism ... later other concepts added to OOP such as association, aggregation, and composition ... in this section the four main concepts will be disccused and other ones could be disscued in other section(s).
+
+### Encapsulation
+Encapsulation is about combine data and func
 
 
 
