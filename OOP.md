@@ -64,7 +64,7 @@ Object-Oriented Programming (OOP) is built on four main concepts: encapsulation,
 
 ---
 ### Encapsulation
-Encapsulation is about combine attributes and functions in one single unit (class).
+Encapsulation is about combining attributes and functions in one single unit (class).
 
 #### Why ? 
 - Data Hiding: Encapsulation keeps an object's data safe by hiding it from outside access. Only specific methods can access it.
@@ -96,6 +96,53 @@ class ExampleClass {
 }
 ```
 ```note that : Prefixing private fields with an underscore (_b) is a common naming convention for private attributes```
+
+---
+### Polymorphism 
+Polymorphism : The ability of the same function or interface to operate differently based on the object or data type it is acting upon.
+
+For example, in the code below, the ```+``` operator adds integers when used with numbers, but concatenates values when used with strings.
+```cpp
+int main{
+    string str = "";
+    int num = 0;
+
+    str += "something";
+    num += 2;
+
+    cout << str << '\n' << num; 
+    return 0;
+}
+```
+
+#### Two types of Polymorphism
+- Static Polymorphism (resolved at compile time) can be implemented using ```function overloading``` which allows multiple functions to have the same name but differ in the number, type, or order of their parameters.
+
+```cpp
+void print(string str);
+void print(int x);
+```
+
+- Dynamic Polymorphism (resolve at runtime) can ve implemented using ```function overriding``` which allows sub-classes to implement parent function with different implementation;
+
+```csharp
+class Parent{
+    void virtual DoSomething(){ // Virtual keyword to annotate that this function can be overriden
+        System.Console.Writeline("Hello from parent");
+    }
+}
+```
+```csharp
+class Child : Parent{
+    void override DoSomething(){
+        System.Console.Writeline("Hello from child");
+    }
+
+}
+```
+
+
+---
 
 
 
