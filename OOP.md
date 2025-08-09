@@ -60,13 +60,42 @@ class Customer{
 ```
 ---
 ## 3. OOP concepts
-OOP has four main concepts encapsulation, abstraction, inheritance and polymorphism ... later other concepts added to OOP such as association, aggregation, and composition ... in this section the four main concepts will be disccused and other ones could be disscued in other section(s).
+Object-Oriented Programming (OOP) is built on four main concepts: encapsulation, abstraction, inheritance, and polymorphism. Additional concepts like association, aggregation, and composition were introduced later. This section will focus on the four core principles.
 
+---
 ### Encapsulation
-Encapsulation is about combine data and func
+Encapsulation is about combine attributes and functions in one single unit (class).
 
+#### Why ? 
+- Data Hiding: Encapsulation keeps an object's data safe by hiding it from outside access. Only specific methods can access it.
+- Better Security: By limiting direct access to data, encapsulation helps prevent accidental changes and protects against security issues.
+- Code Reusability: Encapsulation groups related code into one class, making it easy to reuse in other programs.
 
+#### How ?
+In most object-oriented programming (OOP) languages, there are access modifiers—keywords like ```public```, ```protected```, and ```private``` used to control the visibility and accessibility of class members (attributes, methods, etc.).
 
+Typically, ```private``` attributes are accessed and modified through ```getter``` and ```setter``` methods. Here's an example to help clarify:
+
+```csharp
+class ExampleClass {
+    public int a;         // 'a' is public: accessible from anywhere in the code.
+    private int _b;       // '_b' is private: accessible only within this class.
+    protected int c;      // 'c' is protected: accessible within this class and its subclasses.
+
+    // Getter for _b 
+    public int GetB() {
+        // logic can be added here to control read access.
+        return _b;
+    }
+
+    // Setter for _b
+    public void SetB(int b) {
+        // logic can be added here to validate or restrict assignment.
+        _b = b;
+    }
+}
+```
+```note that : Prefixing private fields with an underscore (_b) is a common naming convention for private attributes```
 
 
 
