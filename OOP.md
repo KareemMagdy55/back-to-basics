@@ -40,12 +40,13 @@ In the early days, paradigms like Procedural and Functional were commonly used i
 In these paradigms, systems were typically modeled as a sequence of steps (like in the first example of this document), or by breaking the program into smaller functions (as in the second example).
 
 However, with the advent of Object-Oriented Programming (OOP) and languages like Smalltalk and Simula, a new approach emerged.
-OOP introduced the idea of thinking about programs as collections of objects. These objects have both attributes (characteristics) and methods (behaviors).
+OOP introduced the idea of thinking about programs as collections of classes. These classes have both attributes (characteristics) and methods (behaviors).
 
-The keyword ```class``` as a blueprint for defining the structure of objects, including their attributes and methods.
+The `class` keyword defines a blueprint that specifies the structure and behavior of objects.  
+A class itself is not stored in memory; instead, **objects** (instances or live version of the class) are saved in memory, and these objects hold their own attributes and can use the methods defined by the class.
 ```csharp
 
-class Customer{
+class Customer{ // Class
     // attributes (characteristics) 
     int age;
     int Balance;
@@ -56,11 +57,64 @@ class Customer{
         // Purchase logic...
     }
 }
+class Program{
+    public static void Main(){
+        Customer c = new Customer() ; // Object
+    }
+}
 
 ```
+> Languages like **C#** and **Java** are primarily **object-oriented** and encourage OOP as the main programming paradigm, while languages like
+**C++** and **Python** are **multi-paradigm**, meaning they support OOP but also allow other styles like procedural and functional programming, while languages like ***C*** does not support OOP at all.
+
+---
+Some languages provide **special member functions** that control the lifecycle of an object, such as ```constructors``` and (in languages like C++) ```destructors```.
+
+- ```Constructor``` — A special function automatically called immediately after an object is created. Used to initialize the object.  
+- ```Destructor``` — A special function automatically called just before an object is destroyed. Used for cleanup tasks.
+
+#### Example in C++
+```cpp
+#include <iostream>
+
+class Factory {
+public:
+    Factory() {
+        std::cout << "Factory is opening...\n";
+    }
+
+    ~Factory() {
+        std::cout << "Factory is closing...\n";
+    }
+};
+```
+> Note that : In languages with automatic garbage collection (like Java or C#), explicit destructors are typically unnecessary because memory cleanup is handled by the garbage collector.
 ---
 ## 3. OOP concepts
 Object-Oriented Programming (OOP) is built on four main concepts: encapsulation, abstraction, inheritance, and polymorphism. Additional concepts like association, aggregation, and composition were introduced later. This section will focus on the four core principles.
+
+---
+### Inheritance 
+Inheritance is the mechanism that allows a class (```child``` or ```subclass```) to acquire the attributes and methods of another class (```parent``` or ```superclass```)
+
+```cpp
+class Parent{
+    public int x;
+    public void func(){}
+}
+
+class Child : Parent{
+
+}
+int main(){
+    Child c = new Child();
+
+    cout << c.x << ' ' ; // var 'x' can be accessed from child 'c'
+    cout << c.func() ; // function 'func()' can be accessed from child 'c'
+}
+```
+
+> Languages like `C#` and `Java` support **single inheritance** (inheriting from one superclass), whereas languages like `C++` allow **multiple inheritance** (inheriting from more than one superclass).
 
 ---
 ### Encapsulation
@@ -103,7 +157,7 @@ Polymorphism : The ability of the same function or interface to operate differen
 
 For example, in the code below, the ```+``` operator adds integers when used with numbers, but concatenates values when used with strings.
 ```cpp
-int main{
+int main(){
     string str = "";
     int num = 0;
 
@@ -140,9 +194,10 @@ class Child : Parent{
 
 }
 ```
-
-
 ---
+
+
+
 
 
 
