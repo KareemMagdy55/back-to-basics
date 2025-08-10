@@ -117,84 +117,6 @@ int main(){
 > Languages like `C#` and `Java` support **single inheritance** (inheriting from one superclass), whereas languages like `C++` allow **multiple inheritance** (inheriting from more than one superclass).
 
 ---
-### Encapsulation
-Encapsulation is about combining attributes and functions in one single unit (class).
-
-#### Why ? 
-- Data Hiding: Encapsulation keeps an object's data safe by hiding it from outside access. Only specific methods can access it.
-- Better Security: By limiting direct access to data, encapsulation helps prevent accidental changes and protects against security issues.
-- Code Reusability: Encapsulation groups related code into one class, making it easy to reuse in other programs.
-
-#### How ?
-In most object-oriented programming (OOP) languages, there are access modifiers—keywords like ```public```, ```protected```, and ```private``` used to control the visibility and accessibility of class members (attributes, methods, etc.).
-
-Typically, ```private``` attributes are accessed and modified through ```getter``` and ```setter``` methods. Here's an example to help clarify:
-
-```csharp
-class ExampleClass {
-    public int a;         // 'a' is public: accessible from anywhere in the code.
-    private int _b;       // '_b' is private: accessible only within this class.
-    protected int c;      // 'c' is protected: accessible within this class and its subclasses.
-
-    // Getter for _b 
-    public int GetB() {
-        // logic can be added here to control read access.
-        return _b;
-    }
-
-    // Setter for _b
-    public void SetB(int b) {
-        // logic can be added here to validate or restrict assignment.
-        _b = b;
-    }
-}
-```
-```note that : Prefixing private fields with an underscore (_b) is a common naming convention for private attributes```
-
----
-### Polymorphism 
-Polymorphism : The ability of the same function or interface to operate differently based on the object or data type it is acting upon.
-
-For example, in the code below, the ```+``` operator adds integers when used with numbers, but concatenates values when used with strings.
-```cpp
-int main(){
-    string str = "";
-    int num = 0;
-
-    str += "something";
-    num += 2;
-
-    cout << str << '\n' << num; 
-    return 0;
-}
-```
-
-#### Two types of Polymorphism
-- Static Polymorphism (resolved at compile time) can be implemented using ```function overloading``` which allows multiple functions to have the same name but differ in the number, type, or order of their parameters.
-
-```cpp
-void print(string str);
-void print(int x);
-```
-
-- Dynamic Polymorphism (resolve at runtime) can ve implemented using ```function overriding``` which allows sub-classes to implement parent function with different implementation;
-
-```csharp
-class Parent{
-    void virtual DoSomething(){ // Virtual keyword to annotate that this function can be overriden
-        System.Console.Writeline("Hello from parent");
-    }
-}
-```
-```csharp
-class Child : Parent{
-    void override DoSomething(){
-        System.Console.Writeline("Hello from child");
-    }
-
-}
-```
----
 ### Abstraction 
 Abstraction involves showing only the essential methods and attributes of an object, while hiding the unnecessary details.
 
@@ -281,6 +203,88 @@ class Program
     }
 }
 ```
+---
+### Encapsulation
+Encapsulation is about combining attributes and functions in one single unit (class).
+
+#### Why ? 
+- Data Hiding: Encapsulation keeps an object's data safe by hiding it from outside access. Only specific methods can access it.
+- Better Security: By limiting direct access to data, encapsulation helps prevent accidental changes and protects against security issues.
+- Code Reusability: Encapsulation groups related code into one class, making it easy to reuse in other programs.
+
+#### How ?
+In most object-oriented programming (OOP) languages, there are access modifiers—keywords like ```public```, ```protected```, and ```private``` used to control the visibility and accessibility of class members (attributes, methods, etc.).
+
+Typically, ```private``` attributes are accessed and modified through ```getter``` and ```setter``` methods. Here's an example to help clarify:
+
+```csharp
+class ExampleClass {
+    public int a;         // 'a' is public: accessible from anywhere in the code.
+    private int _b;       // '_b' is private: accessible only within this class.
+    protected int c;      // 'c' is protected: accessible within this class and its subclasses.
+
+    // Getter for _b 
+    public int GetB() {
+        // logic can be added here to control read access.
+        return _b;
+    }
+
+    // Setter for _b
+    public void SetB(int b) {
+        // logic can be added here to validate or restrict assignment.
+        _b = b;
+    }
+}
+```
+> **Note:** Prefixing private fields with an underscore (e.g., `_b`) is a common naming convention for private attributes.
+
+> **Note:** Encapsulation can be seen as a complementary tool to achieve abstraction. While abstraction focuses on *what* to hide, encapsulation deals with *how* to hide it.
+
+---
+### Polymorphism 
+Polymorphism : The ability of the same function or interface to operate differently based on the object or data type it is acting upon.
+
+For example, in the code below, the ```+``` operator adds integers when used with numbers, but concatenates values when used with strings.
+```cpp
+int main(){
+    string str = "";
+    int num = 0;
+
+    str += "something";
+    num += 2;
+
+    cout << str << '\n' << num; 
+    return 0;
+}
+```
+
+#### Two types of Polymorphism
+- Static Polymorphism (resolved at compile time) can be implemented using ```function overloading``` which allows multiple functions to have the same name but differ in the number, type, or order of their parameters.
+
+```cpp
+void print(string str);
+void print(int x);
+```
+
+- Dynamic Polymorphism (resolve at runtime) can ve implemented using ```function overriding``` which allows sub-classes to implement parent function with different implementation;
+
+```csharp
+class Parent{
+    void virtual DoSomething(){ // Virtual keyword to annotate that this function can be overriden
+        System.Console.Writeline("Hello from parent");
+    }
+}
+```
+```csharp
+class Child : Parent{
+    void override DoSomething(){
+        System.Console.Writeline("Hello from child");
+    }
+
+}
+```
+---
+
 
 
 
