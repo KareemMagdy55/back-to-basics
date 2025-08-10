@@ -1,2 +1,2 @@
-# back2basics
+# back-to-basics
 
