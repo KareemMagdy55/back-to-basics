@@ -195,6 +195,93 @@ class Child : Parent{
 }
 ```
 ---
+### Abstraction 
+Abstraction involves showing only the essential methods and attributes of an object, while hiding the unnecessary details.
+
+#### Abstract classes & Interfaces
+```Abstract classes``` and ```Interfaces``` are tools used to implement abstraction in OOP-based languages. Both serve as blueprints or contracts for the classes that use them.
+
+- ```Abstract Class``` : a class that cannot be instantiated on its own, meaning you cannot create an object directly from it. Its main role is to act as a base class for other classes, called subclasses or derived classes.
+
+It can have both implemented and non-implemented function 
+```csharp
+public abstract class A
+{
+    private int _x;
+
+    public abstract int setX(int x); // non-implemented function
+
+    public int getX() // implemented function
+    {
+        return _x; 
+    }
+}
+```
+
+- ```Interface``` : a contract with method headers (non-implemented functions) only but no ```attributes```, ```constructors```, or ```destructors```. Some languages (like C# and Java *latest versions*) allow default method implementations.
+
+```csharp
+public interface ITrial // intefraces naming should be start with 'I'
+{
+    public int A(); // non-implemented function
+
+    public int B() // implemented function
+    {
+        return 0;
+    }
+}
+```
+#### **```A class can implement one or more interface.```**
+
+---
+#### Two types of Abstraction
+- Data Abstraction : make data is not visible to the outer world, and access it through some methods.
+```csharp
+class A{
+    private int _a;
+    public getA(){ return _a;}
+    public setA(int a){_a = a;}
+}
+```
+- Process Abstraction : hide the internal implementation of the different functions involved in a user operation.
+```csharp
+abstract class BeverageMachine
+{
+    public abstract void BoilWater();
+    public abstract void AddIngredients();
+    public abstract void Pour();
+
+    public void MakeBeverage()
+    {
+        BoilWater();
+        AddIngredients();
+        Pour();
+        Console.WriteLine("Your beverage is ready!");
+    }
+}
+```
+```csharp
+// Concrete class that implements the abstract steps for tea
+class TeaMachine : BeverageMachine
+{
+    public override void BoilWater() => Console.WriteLine("Boiling water for tea...");
+
+    public override void AddIngredients() => Console.WriteLine("Adding tea leaves to boiling water...");
+
+    public override void Pour() => Console.WriteLine("Pouring tea into the cup...");
+}
+```
+```csharp
+class Program
+{
+    static void Main()
+    {
+        TeaMachine teaMachine = new TeaMachine();
+        teaMachine.MakeBeverage();
+    }
+}
+```
+
 
 
 
