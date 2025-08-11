@@ -89,6 +89,26 @@ class CustomerMainPage
 In the code above adding a new customer type will not change existing code, you just need to add its ```Greater``` class and implement ```ICustomerGreeter``` interface.
 
 ---
+### Liskov Substitution Principle (LSP)
+Liskov Substitution Principle (LSP) states that a child class should work anywhere its parent class works, without corrupt program behaviour.
+
+for example, here is a code that violates LSP
+```csharp
+public class Customer {
+   public int GetCode() { // not virtual 
+      return 50;
+   }
+}
+
+public class PremiumCustomer extends Customer {
+    public new int GetCode(){ // not override
+        return 60
+    }
+}
+
+```
+
+```
 
 
 
