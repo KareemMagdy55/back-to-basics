@@ -145,7 +145,7 @@ interface ICreature{
 }
 ```
 ```csharp
-class Bird : ICreture{
+class Bird : ICreature{
     void Fly(){
         // fly logic
     }
@@ -176,5 +176,60 @@ class Bird : IFlyingCreature{
 
 ---
 ### Dependency Inversion Principle (DIP)
+DIP states that high-level modules should not depend on low-level modules, and both should depend on abstractions.
+
+#### Concepts you need to know first : Coupling & Cohesion
+
+- **Coupling**: The degree of dependency between modules.  
+  - Loose coupling → Changes in one module rarely affect others (low dependency between modules).
+  - Tightly coupling → Changes in one module may affect other (high depedency between modules).
+
+- **Cohesion**: elements within a module work together to achieve a specific purpose,
+  - High cohesion → elements work together to do specfic task
+  - Low cohesion →  elements are loosely related and serve multiple purposes
+
+- **Good design**: Loose coupling + High cohesion.
+
+
+> DIP keep your modules Loose coupled
+
+for examples, here is violation of DIP :
+
+```csharp
+Class RegularMan{
+    public virtual void SayHello(){
+        Console.Writeline("Hello from a regular man who works from 8 to 5");
+    }
+}
+```
+```csharp
+Class SuperMan : RegularMan{
+    public override void SayHello(){
+        Console.Writeline("Hello from a superman who saves regular man who works from 8 to 5");
+    }
+}
+```
+
+Solution : 
+```csharp
+inteface IHuman{
+    void SayHello()
+}
+```
+```csharp
+Class RegularMan : IHuman{
+    public void SayHello(){
+        Console.Writeline("Hello from a regular man who works from 8 to 5");
+    }
+}
+```
+```csharp
+Class SuperMan : IHuman{
+    public void SayHello(){
+        Console.Writeline("Hello from a superman who saves regular man who works from 8 to 5");
+    }
+}
+```
+
 
 
