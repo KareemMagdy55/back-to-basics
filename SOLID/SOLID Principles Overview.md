@@ -93,23 +93,44 @@ In the code above adding a new customer type will not change existing code, you 
 Liskov Substitution Principle (LSP) states that a child class should work anywhere its parent class works, without corrupt program behaviour.
 
 for example, here is a code that violates LSP
-```csharp
-public class Customer {
-   public int GetCode() { // not virtual 
-      return 50;
-   }
-}
+using System;
 
-public class PremiumCustomer extends Customer {
-    public new int GetCode(){ // not override
-        return 60
+```csharp
+class Parent
+{
+    public virtual int ReturnValue()
+    {
+        return 4000;
     }
 }
-
 ```
-
+```csharp
+internal class Child : Parent
+{
+    public new int ReturnValue() // new keyword means creating a new one with the same name
+    {
+        return 8000;
+    }
+}
 ```
+```csharp
+class Program
+{
+    static void Main(string[] args)
+    {
+        Parent parent = new Child();
+        
+        // this line should fire Child's 'ReturnValue()' to apply LSP
+        Console.WriteLine(parent.ReturnValue()); // Print 4000 
+    }
+}
+```
+#### Why the example above violates LSP?
+Because ```Child``` cannot substitute ```Parent```, when statemnt ```csharp parent.ReturnValue()``` execute it sees first if child have an **overriden** ```ReturnValue()``` function, then it go back and execute the ```Parent```'s ```ReturnValue()```, so here ```Child``` does not substitute ```Parent``` it does not have its own ```ReturnValue()``` function and calls the ```Parent```'s one.
 
+#### Solution
+Replace ```new``` with ```override```.
 
+---
 
 
