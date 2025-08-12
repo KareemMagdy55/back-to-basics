@@ -132,5 +132,49 @@ Because ```Child``` cannot substitute ```Parent```, when statemnt ```csharp pare
 Replace ```new``` with ```override```.
 
 ---
+### Interface Segregation Principle (ISP)
+ISP states that clients (e.g. classes) should not be forced to depend upon interfaces that they do not use.
+> Classes should only use the methods they need
+
+for example, here is a code that violates ISP
+```csharp
+interface ICreature{
+    void Fly();
+    void Swim();
+    ... other methods
+}
+```
+```csharp
+class Bird : ICreture{
+    void Fly(){
+        // fly logic
+    }
+    void Swim() {
+        // Birds does not swim 
+    }
+}
+```
+
+Solution :
+```csharp
+interface IFlyingCreature{
+    void Fly();
+}
+```
+```csharp
+interface ISwimmingCreature{
+    void Swim();
+}
+```
+```csharp
+class Bird : IFlyingCreature{
+    void Fly(){
+        // fly logic
+    }
+}
+```
+
+---
+### Dependency Inversion Principle (DIP)
 
 
