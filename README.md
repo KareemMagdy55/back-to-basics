@@ -2,7 +2,7 @@
 
 Hello and welcome to **Back to Basics**! 👋  
 This repo is a quick, clean reference for core programming principles.
-
+> I use **AI tools for rephrasing purposes, not for generating content**.
 ---
 
 ## 📂 What's Inside
