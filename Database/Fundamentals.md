@@ -1,3 +1,4 @@
+
 ## Database & DBMS
 - Database (DB): orgnaized collection of data managed by DBMS.
 - Database Mangement System (DBMS) : a software between user and data that offers user to do several operations on data (e.g. MySql, Microsoft Sql Server, MongoDb).
@@ -48,6 +49,21 @@ for example, here is a ```Client``` and ```Shirt``` entities represented in two 
 
 - **Candidate Key** : is key of a table that can be selected as a Primary key.
 - **Alternate Key** : a Candidate Key that is currently not selected as a Primary Key.
+
+### Transactions & ACID Properites 
+**Transaction** refers to a sequence of one or more operations (such as read, write, update, or delete).
+**Data Integrity in DBMS**  refers to the accuracy, consistency, and reliability of data throughout its lifecycle.
+
+ACID properites --if applied-- ensure data integrity on transactions made on DB
+- Atomicity : operations succeed, or none are applied and if any part fails, the entire transaction is rolled back.
+- Consistency : database must remain in a valid state before and after a transaction.
+- Isolation : ensure that transactions run independently without affecting each other.
+- Durability : changes saved even if system fails.
+
+> if isolation did not applied, concurrent tranctions may lead to this problems
+>- Dirty reads: reading uncommitted data
+>- Non-repeatable reads: data changes between two reads
+>- Phantom reads: new rows appear during a transaction
 
 ---
 ## Non-Relational Databases
