@@ -8,6 +8,7 @@ This repo is a quick, clean reference for core programming principles.
 ## 📂 What's Inside
 - [**OOP**](https://github.com/KareemMagdy55/back-to-basics/tree/main/OOP)
 - [**SOLID**](https://github.com/KareemMagdy55/back-to-basics/tree/main/SOLID)
+- [**Database**](https://github.com/KareemMagdy55/back-to-basics/tree/main/Database)
 
 ---
 
