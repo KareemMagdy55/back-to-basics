@@ -48,6 +48,8 @@ for example, here is a ```Client``` and ```Shirt``` entities represented in two 
 - **Candidate Key** : is key of a table that can be selected as a Primary key.
 - **Alternate Key** : a Candidate Key that is currently not selected as a Primary Key.
 
-  ---
+---
+## Non-Relational Databases
+
 
 
