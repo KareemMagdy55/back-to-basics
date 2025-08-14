@@ -1,6 +1,7 @@
 ## Database & DBMS
 - Database (DB): orgnaized collection of data managed by DBMS.
 - Database Mangement System (DBMS) : a software between user and data that offers user to do several operations on data (e.g. MySql, Microsoft Sql Server, MongoDb).
+> A database schema defines the structure of the database: tables, columns, data types, constraints, and the relationships between them. Every record must follow this predefined structure.
 ---
 ## Relational Databases
 In simple terms, it’s a database model that *represents data using tables*. The term "relational" means that these tables are connected to each other (have relations).
@@ -50,7 +51,7 @@ for example, here is a ```Client``` and ```Shirt``` entities represented in two 
 
 ---
 ## Non-Relational Databases
-Databaes that does not use tables to reprenset data, instead data may be stored at many forms such as JSON docs or a graph of edges and vertices.
+Databaes that doesn't represent data in tabluar form , instead data may be stored at many forms such as JSON docs or a graph of edges and vertices (flexiable schema).
 
 fo example, here is a table that stores data as JSON document.
 | Key  | Document |
