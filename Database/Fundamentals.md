@@ -50,6 +50,15 @@ for example, here is a ```Client``` and ```Shirt``` entities represented in two 
 
 ---
 ## Non-Relational Databases
+Databaes that does not use tables to reprenset data, instead data may be stored at many forms such as JSON docs or a graph of edges and vertices.
+
+fo example, here is a table that stores data as JSON document.
+| Key  | Document |
+|------|----------|
+| 1001 | ```{ "CustomerID": 99, "OrderItems": [ { "ProductID": 2010, "Quantity": 2, "Cost": 520 }, { "ProductID": 4365, "Quantity": 1, "Cost": 18 } ], "OrderDate": "04/01/2017" }``` |
+| 1002 | ```{ "CustomerID": 220, "OrderItems": [ { "ProductID": 1285, "Quantity": 1, "Cost": 120 } ], "OrderDate": "05/08/2017" }``` |
+
+> Side note :  NoSQL refers to data stores that do not use SQL for queries. Instead, the data stores use other programming languages and constructs to query the data
 
 
 
