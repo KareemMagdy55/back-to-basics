@@ -4,7 +4,10 @@ Sql is structured query langauage that is used to access and manipulate database
 ---
 ## SQL Commands 
 SQL commands are the fundamental building blocks for interacting with a DBMS.
-SQL commands are categorized into 5 categories
+
+They are generally divided into five main categories.
+
+This README will cover three of those categories, while the remaining two will be discussed later....
 
 ---
 ### DDL - Data Definition Language
@@ -23,7 +26,7 @@ DDL Commands
 > SQL commands is case-insensitive , This means `Alter`, `ALTER`, and `AltEr` are the same.
 ---
 ### DQL - Data Query Language
-used for performing queries on the data within schema objects.
+Used for performing queries on the data within schema objects.
 - `Select`, `From` : Used to retrieve data from database 
 
   ```sql
@@ -70,9 +73,24 @@ used for performing queries on the data within schema objects.
   LIMIT number;
   ```
 
-  ---
+---
+### DML - Data Manipulation Language
+Deals with the manipulation of data present in the database
 
-
+- `INSERT` : insert data into a table 
+  ```sql
+    INSERT INTO table_name (column1, column2, ...)
+    VALUES (value1, value2, ...);
+  ```
+- `UPDATE` : update existing data within a table
+  ```sql
+  UPDATE table_name
+  SET column1 = value1, column2 = value2
+  WHERE condition;
+  ```
+- `DELETE` : Delete all or specfic records from a database table (removal can be rolled back)
+  ```sql DELETE FROM table```; deletes all records
+  ```sql Delete FROM table WHERE condition``` deletes specfic records
 
   
   
