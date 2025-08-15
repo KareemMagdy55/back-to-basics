@@ -78,20 +78,28 @@ Used for performing queries on the data within schema objects.
 Deals with the manipulation of data present in the database
 
 - `INSERT` : insert data into a table 
+
   ```sql
     INSERT INTO table_name (column1, column2, ...)
     VALUES (value1, value2, ...);
   ```
 - `UPDATE` : update existing data within a table
+
   ```sql
   UPDATE table_name
   SET column1 = value1, column2 = value2
   WHERE condition;
   ```
 - `DELETE` : Delete all or specfic records from a database table (removal can be rolled back)
-  ```sql DELETE FROM table```; deletes all records
-  ```sql Delete FROM table WHERE condition``` deletes specfic records
 
+  ```sql
+   -- Delete all records from table
+   DELETE FROM table 
+  ```
+  ```sql
+  -- Delete specfic records from table
+  Delete FROM table WHERE condition
+  ```
   
   
   
