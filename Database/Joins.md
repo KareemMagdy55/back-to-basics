@@ -64,7 +64,9 @@ will result this table
 
 ---
 ### Left Outer Join
-Return all left table's records with matched results from the right table, if not matched the cell will be `NULL`
+
+Returns all records from the **left table** and the **matching records** from the **right table**. If there is no match, the result will show `NULL` values for columns from the right table.
+
 
 for example sql query
 ```sql
@@ -87,7 +89,8 @@ will result this table
 
 ---
 ### Right Outer Join
-Return all right table's records with matched results from the left table, if not matched the cell will be `NULL`
+Returns all records from the **right table** and the **matched records** from the **left table**. If there is no match, the result will contain `NULL` values for columns from the left table.
+
 
 for example sql query
 ```sql
@@ -101,7 +104,32 @@ will result this table
 |--------------|------------|
 | John Doe     | Marketing  |
 | Jane Smith   | Sales      |
-| NULL  | HR         |
+| NULL         | HR         |
+
+---
+### Cross Join
+Return all possible combinations of two tables
+for example sql query
+```sql
+  SELECT Employees.EmployeeName, Departments.Department
+  FROM Employees
+  cross join Departments
+```
+will result this table
+
+| EmployeeID (Emp) | EmployeeName | EmployeeID (Dept) | Department |
+| ---------------- | ------------ | ----------------- | ---------- |
+| 1                | John Doe     | 1                 | Marketing  |
+| 1                | John Doe     | 2                 | Sales      |
+| 1                | John Doe     | 4                 | HR         |
+| 2                | Jane Smith   | 1                 | Marketing  |
+| 2                | Jane Smith   | 2                 | Sales      |
+| 2                | Jane Smith   | 4                 | HR         |
+| 3                | Emily Jones  | 1                 | Marketing  |
+| 3                | Emily Jones  | 2                 | Sales      |
+| 3                | Emily Jones  | 4                 | HR         |
+
+
 
 
 
