@@ -37,11 +37,11 @@ class Library{
 ```
 ---
 ### Composition
-Composition is a form of association where the child’s lifecycle is dependent on the parent’s lifecycle.
+Composition is a form of association where the object lifecycle is dependent on the another’s lifecycle. ('Has a' relation)
 
-For example, consider "Cars" and "CarEngine", "CarEngine" cannot exist independently without a "Car".
+For example, consider "Desert" and "Sand", "Desert" cannot exist independently without a "Sand".
 ```csharp
-class Car{
-  private CarEngine _Engine; 
+class Desert{
+  private Sand _sand; 
 }
 ```
