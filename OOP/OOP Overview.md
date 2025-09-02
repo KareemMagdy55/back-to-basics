@@ -169,9 +169,9 @@ class A{
 ```csharp
 abstract class BeverageMachine
 {
-    public abstract void BoilWater();
-    public abstract void AddIngredients();
-    public abstract void Pour();
+    protected abstract void BoilWater();
+    protected abstract void AddIngredients();
+    protected abstract void Pour();
 
     public void MakeBeverage()
     {
@@ -186,11 +186,11 @@ abstract class BeverageMachine
 // Concrete class that implements the abstract steps for tea
 class TeaMachine : BeverageMachine
 {
-    public override void BoilWater() => Console.WriteLine("Boiling water for tea...");
+    protected override void BoilWater() => Console.WriteLine("Boiling water for tea...");
 
-    public override void AddIngredients() => Console.WriteLine("Adding tea leaves to boiling water...");
+    protected override void AddIngredients() => Console.WriteLine("Adding tea leaves to boiling water...");
 
-    public override void Pour() => Console.WriteLine("Pouring tea into the cup...");
+    protected override void Pour() => Console.WriteLine("Pouring tea into the cup...");
 }
 ```
 ```csharp
